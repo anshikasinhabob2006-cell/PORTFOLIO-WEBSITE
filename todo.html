@@ -1,0 +1,53 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+<title>ToDo List</title>
+<style> body{
+font-family:Arial;
+}
+
+.completed{
+text-decoration:line-through; color: gray;
+}
+
+button{
+margin-left:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>ToDoList</h2>
+
+<inputtype="text"id="taskInput"placeholder="Enter task">
+<buttononclick="addTask()">Add</button>
+
+<ulid="taskList"></ul>
+
+<script>
+ 
+function addTask(){
+letinput=document.getElementById("taskInput"); let task = input.value;
+
+if(task==="")return;
+
+letli=document.createElement("li"); li.textContent = task;
+
+li.onclick = function(){ li.classList.toggle("completed");
+};
+
+letdeleteBtn=document.createElement("button"); deleteBtn.textContent = "Delete";
+
+deleteBtn.onclick=function(){ li.remove();
+};
+
+li.appendChild(deleteBtn); document.getElementById("taskList").appendChild(li);
+
+input.value="";
+}
+
+</script>
+
+</body>
+</html> 
